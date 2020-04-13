@@ -7,4 +7,4 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(require('./routes/index'));
 
-app.listen(2000);
+app.listen(process.env.PORT || 2000);
