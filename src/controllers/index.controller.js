@@ -1,12 +1,15 @@
 
 const { Pool } = require('pg');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 pool = new Pool({
-    host: 'localhost',
-    user: 'postgres',
-    password: 'senha123',
-    database: 'MyControl',
-    port: 5432,
+    host: process.env.PG_SERVER,
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWORD,
+    database: process.env.PG_DATABASE,
+    port: process.env.PG_PORT,
 });
 
 const getUsers = async (req, res) => {
